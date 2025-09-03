@@ -52,3 +52,32 @@ TEST_CASE("Modulo Operation Count Tests", "[countModOps]") {
     }
 }
 // test edge cases
+TEST_CASE("Edge Case Tests", "[isPrimeHalf][isPrimeSqrt][countModOps]") {
+    SECTION("Negative and Zero"){
+        REQUIRE(isPrimeHalf(-10) == false);
+        REQUIRE(isPrimeSqrt(-10) == false);
+        REQUIRE(isPrimeHalf(0) == false);
+        REQUIRE(isPrimeSqrt(0) == false);
+    }
+    SECTION("One and Two"){
+        REQUIRE(isPrimeHalf(1) == false);
+        REQUIRE(isPrimeSqrt(1) == false);
+        REQUIRE(isPrimeHalf(2) == true);
+        REQUIRE(isPrimeSqrt(2) == true);
+    }
+    SECTION("Single Number Range"){
+        REQUIRE(countModOps(isPrimeHalf, 5, 5) == 1); // 5 is prime
+        REQUIRE(countModOps(isPrimeSqrt, 5, 5) == 1);
+        REQUIRE(countModOps(isPrimeHalf, 4, 4) == 1); // 4 is not prime
+        REQUIRE(countModOps(isPrimeSqrt, 4, 4) == 1);
+    }
+    SECTION("two number range"){
+        REQUIRE(countModOps(isPrimeHalf, 4, 5) == 2); // 4 is not prime, 5 is prime
+        REQUIRE(countModOps(isPrimeSqrt, 4, 5) == 2);
+        REQUIRE(countModOps(isPrimeHalf, 0,1) == 0);
+        REQUIRE(countModOps(isPrimeSqrt, 0,1) == 0);
+        // REQUIRE(countModOps(isPrimeHalf, 1,2) == 1);
+        // REQUIRE(countModOps(isPrimeSqrt, 1,2) == 1);
+    }
+}
+

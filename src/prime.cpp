@@ -11,6 +11,7 @@ bool isPrimeHalf(int n, long long* modOps) {
         if(modOps) (*modOps)++; // Increment the counter for each modulo operation
         if(n % i == 0) return false;
     }
+    // if(n == 2) {if(modOps) (*modOps)++;} // Edge case for 2
     return true; 
 }
 // TODO: Implement isPrimeSqrt
@@ -24,7 +25,7 @@ bool isPrimeSqrt(int n, long long* modOps) {
         if(modOps) (*modOps)++; // Increment the counter for each modulo operation
         if(n % i == 0) return false;
     }
-    
+    // if(n == 2) {if(modOps) (*modOps)++;}
     return true; // Replace with actual implementation
 }
 // TODO: Implement countModOps
@@ -32,7 +33,6 @@ long long countModOps(PrimeFn isPrime, int lo, int hi) {
     long long totalModOps = 0;
     for(int num = lo; num <= hi; num++){
         isPrime(num, &totalModOps);
-
     }
     return totalModOps; // Replace with actual count of modulo operations
 }
