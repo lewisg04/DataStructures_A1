@@ -1,6 +1,6 @@
 ﻿//prime.cpp
 // TODO: Implement isPrimeHalf
-#include "../incl/prime.hpp"
+#include "prime.hpp"
 bool isPrimeHalf(int n, long long* modOps) {
     if(n <= 1) return false;
     // Your implementation here

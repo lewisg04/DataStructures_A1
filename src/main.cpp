@@ -1,7 +1,7 @@
 ﻿#ifndef MAIN_CPP
 #define MAIN_CPP
 #include <iostream>
-#include "../incl/prime.hpp"
+#include "prime.hpp"
 int main() {
     constexpr int LO = 2, HI = 10000;
 
