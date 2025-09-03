@@ -88,4 +88,32 @@ TEST_CASE("Edge Case Tests", "[isPrimeHalf][isPrimeSqrt][countModOps]") {
         // REQUIRE(countModOps(isPrimeSqrt, 1,2) == 1);
     }
 }
-
+TEST_CASE("sqrt tests", "[isPrimeSqrt]"){
+    //showing that it wont do more than 1 mod op for primes less than 9
+    REQUIRE(countModOps(isPrimeSqrt, 1, 1) == 0);
+    REQUIRE(countModOps(isPrimeSqrt, 2, 2) == 0);
+    REQUIRE(countModOps(isPrimeSqrt, 3, 3) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 4, 4) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 5, 5) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 6, 6) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 7, 7) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 8, 8) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 9, 9) == 2); // 9 is the first to require 2 mod ops
+    REQUIRE(countModOps(isPrimeSqrt, 10, 10) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 11, 11) == 2); // 11 is prime but needs to check 2 and 3
+    REQUIRE(countModOps(isPrimeSqrt, 12, 12) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 13, 13) == 2); // 13 is prime but needs to check 2 and 3
+    REQUIRE(countModOps(isPrimeSqrt, 14, 14) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 15, 15) == 2); // 15 needs to check 2 and 3
+    REQUIRE(countModOps(isPrimeSqrt, 16, 16) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 17, 17) == 2); // 17 is prime but needs to check 2 and 3
+    REQUIRE(countModOps(isPrimeSqrt, 18, 18) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 19, 19) == 2); 
+    REQUIRE(countModOps(isPrimeSqrt, 20, 20) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 21, 21) == 2);
+    REQUIRE(countModOps(isPrimeSqrt, 22, 22) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 23, 23) == 2); 
+    REQUIRE(countModOps(isPrimeSqrt, 24, 24) == 1);
+    REQUIRE(countModOps(isPrimeSqrt, 25, 25) == 3);
+    REQUIRE(isPrimeSqrt(25) == false);
+}

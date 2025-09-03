@@ -24,8 +24,8 @@ bool isPrimeSqrt(int n, long long* modOps) {
     if(n <= 1) return false;
         if(n == 2) return true; // 2 is prime
         if(modOps) (*modOps)++;
-        if(n % 2 == 0) { return false;}
-    for(int i = 3; i*i <= n; i++){
+        if(n % 2 == 0) { return false;}//check for even numbers greater than 2
+    for(int i = 3; i*i <= n; i += 2){
         if(modOps) (*modOps)++; // Increment the counter for each modulo operation
         if(n % i == 0) return false;
     }
