@@ -59,11 +59,13 @@ TEST_CASE("Edge Case Tests", "[isPrimeHalf][isPrimeSqrt][countModOps]") {
         REQUIRE(isPrimeHalf(0) == false);
         REQUIRE(isPrimeSqrt(0) == false);
     }
-    SECTION("One and Two"){
+    SECTION("1 2 3"){
         REQUIRE(isPrimeHalf(1) == false);
         REQUIRE(isPrimeSqrt(1) == false);
         REQUIRE(isPrimeHalf(2) == true);
         REQUIRE(isPrimeSqrt(2) == true);
+        REQUIRE(isPrimeHalf(3) == true);
+        REQUIRE(isPrimeSqrt(3) == true);
     }
     SECTION("Single Number Range"){
         REQUIRE(countModOps(isPrimeHalf, 1, 1) == 0); // 1 is not prime
